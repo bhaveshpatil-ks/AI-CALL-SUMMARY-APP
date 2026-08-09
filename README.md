@@ -16,7 +16,7 @@
 
   **A modern, high-performance mobile call intelligence & AI CRM platform** — supporting automated phone call recording sync, multi-provider AI transcription & executive summarization (Built-in Smart AI, OpenAI GPT-4o, Local Ollama Llama 3.2), 3-level lead directory drilldowns, universal deep search indexing app settings, real-time analytics metrics, and multi-channel OTP security.
 
-  [Mobile CRM App](#features) • [Analytics Dashboard](#analytics--metrics) • [Documentation](#project-structure)
+  [Mobile CRM App](#key-features) • [Analytics Dashboard](#key-features) • [Documentation](#project-structure)
 
   <br />
 
@@ -131,50 +131,13 @@ git clone https://github.com/bhaveshpatil-ks/AI-CALL-SUMMARY-APP.git
 cd AI-CALL-SUMMARY-APP
 ```
 
-### 2. Install Dependencies
+### 2. Run Development App
 ```bash
-# Install root orchestration dependencies
-npm install
-
-# Install frontend dependencies
-cd frontend && npm install && cd ..
-
-# Install backend dependencies
-cd backend && npm install && cd ..
-```
-
-### 3. Start Development Servers
-
-To start the **Mobile Frontend Application**:
-```bash
+# Start Mobile Frontend App
 npm run dev
-# Running at http://localhost:5173/
-```
 
-To start the **Express Backend Server**:
-```bash
+# Start Express Backend API (Optional)
 npm run dev:backend
-# Running at http://localhost:4000/
-```
-
----
-
-## How to Push to GitHub Repository
-
-Execute the following commands in your terminal to push updates to GitHub:
-
-```bash
-# 1. Add all modified and new files
-git add .
-
-# 2. Commit changes with a descriptive message
-git commit -m "docs: Update GitHub README with professional layout, product tables, and tech stack details"
-
-# 3. Ensure main branch is set
-git branch -M main
-
-# 4. Push to remote repository
-git push -u origin main
 ```
 
 ---
