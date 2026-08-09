@@ -123,25 +123,6 @@ Instead of sales representatives manually typing call notes or forgetting follow
 
 ---
 
-## Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/bhaveshpatil-ks/AI-CALL-SUMMARY-APP.git
-cd AI-CALL-SUMMARY-APP
-```
-
-### 2. Run Development App
-```bash
-# Start Mobile Frontend App
-npm run dev
-
-# Start Express Backend API (Optional)
-npm run dev:backend
-```
-
----
-
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
