@@ -7,56 +7,56 @@ import { api } from "./api";
 const SETTINGS_SEARCH_ITEMS = [
   {
     id: "set-1",
-    title: "🎙️ Mobile Call Recording & Auto-Sync",
+    title: "Mobile Call Recording & Auto-Sync",
     subtitle: "Auto-sync calls on hang-up, filter short calls (<10s), device folder path",
     keywords: ["recording", "storage", "path", "folder", "sync", "hang-up", "hangup", "filter", "short calls", "device", "mobile"],
     snippet: "Configure Android/iOS call recording storage directory and auto-sync behavior"
   },
   {
     id: "set-2",
-    title: "🤖 AI Processing Engine & Provider",
+    title: "AI Processing Engine & Provider",
     subtitle: "Built-in Smart AI (Instant - FREE), OpenAI GPT-4o, Gemini, Ollama Local Host",
     keywords: ["ai", "engine", "provider", "model", "llama", "ollama", "gpt", "openai", "gemini", "api key", "builtin", "smart ai"],
     snippet: "Choose zero-setup Built-in Smart AI or connect custom Cloud API / Local Ollama"
   },
   {
     id: "set-3",
-    title: "📋 Auto-Copy Summary to Clipboard",
+    title: "Auto-Copy Summary to Clipboard",
     subtitle: "Automatically copy AI-generated call note to clipboard after call finishes",
     keywords: ["copy", "clipboard", "auto-copy", "summary", "notes", "share"],
     snippet: "Instantly copy structured call summaries for 1-tap pasting into WhatsApp / Email"
   },
   {
     id: "set-4",
-    title: "💬 Quick SMS Follow-up Template",
+    title: "Quick SMS Follow-up Template",
     subtitle: "Manage default message template for 1-tap mobile SMS follow-up button",
     keywords: ["sms", "template", "text", "message", "quick follow-up", "quote"],
     snippet: "Customize default follow-up text sent to leads after phone calls"
   },
   {
     id: "set-5",
-    title: "🔒 Security & Biometric Lock",
+    title: "Security & Biometric Lock",
     subtitle: "Brute-force protection, encrypted tokens & Biometric Face ID",
     keywords: ["security", "auth", "lock", "biometric", "face id", "fingerprint"],
     snippet: "Configure enterprise-grade encrypted tokens and Face ID lock"
   },
   {
     id: "set-6",
-    title: "📥 Export All CRM Leads to CSV",
+    title: "Export All CRM Leads to CSV",
     subtitle: "Download entire contact and lead database as a .CSV spreadsheet file",
     keywords: ["export", "csv", "backup", "download", "leads", "excel", "spreadsheet"],
     snippet: "Export caller records, phone numbers, and AI notes into a CSV file"
   },
   {
     id: "set-7",
-    title: "🔄 Reset CRM Sample Data",
+    title: "Reset CRM Sample Data",
     subtitle: "Restore initial default contacts, pipeline leads, and sample call audio",
     keywords: ["reset", "restore", "clear", "sample data", "default"],
     snippet: "Revert all CRM lead stages and records back to initial state"
   },
   {
     id: "set-8",
-    title: "🚨 Delete Account & Purge Data",
+    title: "Delete Account & Purge Data",
     subtitle: "Permanently erase account, call audio cache, and clear all lead profiles",
     keywords: ["delete", "account", "purge", "erase", "remove", "danger", "wipe"],
     snippet: "Permanently delete your AI Call CRM account and purge memory"
@@ -737,7 +737,9 @@ export default function App() {
         <>
           <div className="drawer-backdrop" onClick={() => setShowProfileOtpModal(false)} />
           <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "340px", background: "#ffffff", borderRadius: "6px", border: "1px solid var(--surface-border-strong)", padding: "1.25rem", zIndex: "270", boxShadow: "0 20px 48px rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
-            <div style={{ textAlign: "center", fontSize: "1.8rem" }}>🔐</div>
+            <div style={{ textAlign: "center" }}>
+              <span className="security-badge-header">[ 2FA // VERIFICATION ]</span>
+            </div>
             <h3 style={{ fontSize: "1.05rem", fontWeight: "800", color: "#090d16", textAlign: "center" }}>
               Verify Profile Changes
             </h3>
@@ -758,7 +760,7 @@ export default function App() {
                       onChange={() => setOtpChannel("mobile")}
                     />
                     <div style={{ fontSize: "0.78rem" }}>
-                      <strong>📱 Mobile Number</strong>
+                      <strong>Mobile Number</strong>
                       <div style={{ fontSize: "0.7rem", color: "var(--text-subtle)", fontFamily: "var(--font-mono)" }}>{userProfile.phone}</div>
                     </div>
                   </label>
@@ -772,7 +774,7 @@ export default function App() {
                       onChange={() => setOtpChannel("email")}
                     />
                     <div style={{ fontSize: "0.78rem" }}>
-                      <strong>📧 Company Email</strong>
+                      <strong>Company Email</strong>
                       <div style={{ fontSize: "0.7rem", color: "var(--text-subtle)", fontFamily: "var(--font-mono)" }}>{userProfile.email}</div>
                     </div>
                   </label>
@@ -837,7 +839,7 @@ export default function App() {
       {/* ACCOUNT DELETED NOTIFICATION BANNER */}
       {accountDeletedNotice && (
         <div style={{ background: "#dc2626", color: "#ffffff", padding: "0.75rem 1rem", textAlign: "center", fontSize: "0.78rem", fontWeight: "800", fontFamily: "var(--font-mono)" }}>
-          ⚠️ Account and all call recording data have been permanently deleted.
+          Account and all call recording data have been permanently deleted.
         </div>
       )}
 
@@ -845,7 +847,7 @@ export default function App() {
       {syncNotice && (
         <div style={{ background: "#090d16", color: "#ffffff", padding: "0.75rem 1rem", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           <span style={{ fontSize: "0.78rem", fontWeight: "600" }}>
-            📞 Synced call from {syncNotice.name} — Lead created
+            Synced call from {syncNotice.name} — Lead created
           </span>
           <span style={{ background: "rgba(16,185,129,0.15)", color: "#10b981", fontSize: "0.68rem", padding: "0.2rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
             SYNCED
@@ -865,7 +867,11 @@ export default function App() {
         <>
           <div className="drawer-backdrop" onClick={() => setDeleteAccountModalOpen(false)} />
           <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "340px", background: "#ffffff", borderRadius: "6px", border: "1px solid var(--surface-border-strong)", padding: "1.25rem", zIndex: "260", boxShadow: "0 20px 48px rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
-            <div style={{ textAlign: "center", fontSize: "2rem" }}>🚨</div>
+            <div style={{ textAlign: "center" }}>
+              <span style={{ color: "#dc2626", fontFamily: "var(--font-mono)", fontSize: "0.72rem", fontWeight: "800", background: "rgba(220,38,38,0.1)", padding: "0.25rem 0.6rem", borderRadius: "3px" }}>
+                [ WARNING // PERMANENT ACTION ]
+              </span>
+            </div>
             <h3 style={{ fontSize: "1.05rem", fontWeight: "900", color: "#dc2626", textAlign: "center" }}>
               Delete Account &amp; Purge Data?
             </h3>
@@ -897,20 +903,26 @@ export default function App() {
       {summaryModalLead && (
         <>
           <div className="drawer-backdrop" onClick={() => setSummaryModalLead(null)} />
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "340px", background: "#ffffff", borderRadius: "6px", border: "1px solid var(--surface-border-strong)", padding: "1.25rem", zIndex: "250", boxShadow: "0 20px 48px rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "360px", background: "#ffffff", borderRadius: "6px", border: "1px solid var(--surface-border-strong)", padding: "1.25rem", zIndex: "250", boxShadow: "0 20px 48px rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid var(--surface-border)", paddingBottom: "0.45rem" }}>
-              <h3 style={{ fontSize: "0.95rem", fontWeight: "800", color: "#090d16" }}>⚡ AI Call Summary</h3>
-              <button type="button" onClick={() => setSummaryModalLead(null)} style={{ border: "none", background: "none", fontSize: "1.1rem", fontWeight: "800", cursor: "pointer", color: "#64748b" }}>✕</button>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                <span style={{ width: "6px", height: "6px", borderRadius: "1px", background: "#10b981", display: "inline-block" }}></span>
+                <h3 style={{ fontSize: "0.95rem", fontWeight: "700", color: "#090d16" }}>AI Call Summary</h3>
+              </div>
+              <button type="button" onClick={() => setSummaryModalLead(null)} style={{ border: "none", background: "none", fontSize: "1rem", fontWeight: "800", cursor: "pointer", color: "#64748b" }}>✕</button>
             </div>
             <div>
               <strong style={{ fontSize: "0.92rem", color: "#090d16" }}>{summaryModalLead.name}</strong>
               <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{summaryModalLead.company} • {summaryModalLead.phone}</div>
             </div>
-            <div className="note-box" style={{ margin: 0 }}>
-              {summaryModalLead.notes[0] || "AI processed call audio automatically. Quote request and spec verified."}
+            <div className="ai-summary-box" style={{ margin: 0 }}>
+              <div className="ai-box-label">[ SPECIMEN // AUDIO_NOTE ]</div>
+              <p className="ai-box-text">
+                {summaryModalLead.notes[0] || "AI processed call audio automatically. Quote request and spec verified."}
+              </p>
             </div>
-            <a href={`sms:${summaryModalLead.phone}`} className="btn-black-pill btn-sms-pill" style={{ justifyContent: "center", padding: "0.55rem" }}>
-              💬 Send Mobile SMS
+            <a href={`sms:${summaryModalLead.phone}`} className="btn-hero-primary" style={{ justifyContent: "center", padding: "0.55rem" }}>
+              Send Mobile SMS
             </a>
           </div>
         </>
@@ -1348,7 +1360,7 @@ export default function App() {
                       </div>
                       <div style={{ fontSize: "0.74rem", color: "var(--text-muted)" }}>{res.subtitle}</div>
                       <div className="clean-deal-tag">
-                        <span>🏷️ {res.snippet}</span>
+                        <span>{res.snippet}</span>
                       </div>
                       <div style={{ textAlign: "right", fontSize: "0.72rem", color: "var(--brand-olive)", fontWeight: "800" }}>
                         {res.type === "setting" ? "Open Setting Option →" : "View Full Details →"}
@@ -1358,8 +1370,8 @@ export default function App() {
 
                   {universalSearchQuery && searchResults.length === 0 && (
                     <div className="panel-box" style={{ textAlign: "center", padding: "2rem 1rem" }}>
-                      <div style={{ fontSize: "2rem" }}>🔍</div>
-                      <h3 style={{ fontSize: "1rem", fontWeight: "800" }}>No matching results</h3>
+                      <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", fontWeight: "800", color: "#64748b" }}>[ 00 // NO_MATCHING_RECORDS ]</div>
+                      <h3 style={{ fontSize: "1rem", fontWeight: "800", marginTop: "0.4rem" }}>No matching results</h3>
                       <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
                         No call notes, contact names, spoken transcript words, or app settings options matched "{universalSearchQuery}".
                       </p>
@@ -1455,7 +1467,7 @@ export default function App() {
                             </div>
                             <p className="lead-snippet-text">{call.summary}</p>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.72rem", color: "var(--text-subtle)", marginTop: "0.2rem" }}>
-                              <span style={{ fontFamily: "var(--font-mono)" }}>⏱️ {call.duration}</span>
+                              <span style={{ fontFamily: "var(--font-mono)" }}>{call.duration}</span>
                               <span style={{ fontWeight: "700", color: "#0284c7", fontFamily: "var(--font-mono)" }}>VIEW_AI_AUDIO →</span>
                             </div>
                           </div>
@@ -1484,7 +1496,7 @@ export default function App() {
                     <div className="panel-box dark-panel-box">
                       <div className="panel-header">
                         <div>
-                          <h3 style={{ color: "#ffffff" }}>🎙️ {activeLeadCall.title}</h3>
+                          <h3 style={{ color: "#ffffff" }}>{activeLeadCall.title}</h3>
                           <div style={{ fontSize: "0.72rem", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>{activeLeadCall.client}</div>
                         </div>
                         <span style={{ padding: "0.2rem 0.5rem", background: "rgba(16,185,129,0.15)", color: "#10b981", borderRadius: "2px", fontFamily: "var(--font-mono)", fontSize: "0.68rem", fontWeight: "700" }}>
@@ -1511,8 +1523,13 @@ export default function App() {
                             type="button"
                             className="btn-play-pause"
                             onClick={() => setIsPlaying(!isPlaying)}
+                            aria-label={isPlaying ? "Pause" : "Play"}
                           >
-                            {isPlaying ? "⏸" : "▶"}
+                            {isPlaying ? (
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            ) : (
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            )}
                           </button>
                           <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.15rem" }}>
                             <input
@@ -1521,7 +1538,7 @@ export default function App() {
                               max={duration}
                               value={currentTime}
                               onChange={(e) => setCurrentTime(Number(e.target.value))}
-                              style={{ accentColor: "#84cc16", cursor: "pointer" }}
+                              style={{ accentColor: "#10b981", cursor: "pointer" }}
                             />
                             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.7rem", color: "#9ca3af", fontFamily: "var(--font-mono)" }}>
                               <span>{formatTime(currentTime)}</span>
@@ -1534,12 +1551,12 @@ export default function App() {
                       {aiResult && (
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                           <div className="ai-summary-box">
-                            <div className="ai-box-label">⚡ Executive Summary</div>
+                            <div className="ai-box-label">[ SPECIMEN // EXECUTIVE_SUMMARY ]</div>
                             <p className="ai-box-text">{aiResult.summary}</p>
                           </div>
 
                           <div>
-                            <div className="ai-box-label" style={{ marginBottom: "0.35rem" }}>🎯 Action Items</div>
+                            <div className="ai-box-label" style={{ marginBottom: "0.35rem" }}>[ ACTION // CHECKLIST ]</div>
                             <div className="checklist-area">
                               {aiResult.actionItems.map((item, i) => (
                                 <div key={i} className="checklist-item">
@@ -1620,7 +1637,7 @@ export default function App() {
                       </div>
 
                       <div className="clean-deal-tag">
-                        <span>🏷️ {lead.notes[0] || "AI processed call audio automatically."}</span>
+                        <span>{lead.notes[0] || "AI processed call audio automatically."}</span>
                       </div>
 
                       <div className="clean-card-actions">
@@ -1744,7 +1761,7 @@ export default function App() {
                       </div>
 
                       <div style={{ marginTop: "0.2rem", padding: "0.45rem", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "3px", fontSize: "0.68rem", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>
-                        🔑 TOKEN: {userProfile.sessionToken.substring(0, 32)}...
+                        TOKEN: {userProfile.sessionToken.substring(0, 32)}...
                       </div>
                     </div>
                   </div>
@@ -1753,7 +1770,7 @@ export default function App() {
                 {/* Section 1: Security Controls (Biometric) */}
                 <div className="panel-box">
                   <div className="panel-header">
-                    <h3>🛡️ Security Controls</h3>
+                    <h3>Security Controls</h3>
                     <span style={{ fontSize: "0.64rem", background: "rgba(16,185,129,0.12)", color: "#059669", padding: "0.18rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
                       [ ENCRYPTED ]
                     </span>
@@ -1780,7 +1797,7 @@ export default function App() {
                 {/* Section 2: Mobile Call Recording Storage & Sync Settings */}
                 <div className="panel-box">
                   <div className="panel-header">
-                    <h3>🎙️ Mobile Recording &amp; Sync</h3>
+                    <h3>Mobile Recording &amp; Sync</h3>
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
@@ -1829,7 +1846,7 @@ export default function App() {
                 {/* Section 3: AI Summarizer & Clipboard Settings */}
                 <div className="panel-box">
                   <div className="panel-header">
-                    <h3>🤖 AI Call Engine Settings</h3>
+                    <h3>AI Call Engine Settings</h3>
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
@@ -1840,9 +1857,9 @@ export default function App() {
                         value={aiProvider}
                         onChange={(e) => setAiProvider(e.target.value)}
                       >
-                        <option value="builtin">⚡ Built-in Smart AI (Instant - FREE)</option>
-                        <option value="openai">✨ OpenAI GPT-4o / Gemini (Cloud API Key)</option>
-                        <option value="ollama">💻 Local Server Host</option>
+                        <option value="builtin">Built-in Smart AI (Instant - FREE)</option>
+                        <option value="openai">OpenAI GPT-4o / Gemini (Cloud API Key)</option>
+                        <option value="ollama">Local Server Host</option>
                       </select>
                     </div>
 
@@ -1894,7 +1911,7 @@ export default function App() {
                 {/* Section 4: SMS Follow-up Template Manager */}
                 <div className="panel-box">
                   <div className="panel-header">
-                    <h3>💬 Quick SMS Template</h3>
+                    <h3>Quick SMS Template</h3>
                   </div>
 
                   <div>
