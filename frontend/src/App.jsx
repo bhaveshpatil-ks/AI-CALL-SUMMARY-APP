@@ -987,11 +987,13 @@ export default function App() {
                   🔓 Log In to Mobile CRM
                 </button>
 
-                <div style={{ textAlign: "center", fontSize: "0.72rem", color: "var(--text-subtle)", marginTop: "0.2rem" }}>
-                  🌐 Haven't listed your company yet?
+                <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "10px", padding: "0.65rem 0.75rem", textAlign: "center", fontSize: "0.72rem", color: "#475569", lineHeight: "1.4", marginTop: "0.2rem" }}>
+                  🌐 <strong>Company Registration Notice</strong>
                   <br />
-                  <span style={{ color: "var(--brand-olive-dark)", fontWeight: "800" }}>
-                    List your business on our website to get your Company ID.
+                  New company registration is available exclusively on our website.
+                  <br />
+                  <span style={{ color: "#0f172a", fontWeight: "700" }}>
+                    Register your business on the website to get your Company ID.
                   </span>
                 </div>
 
