@@ -929,6 +929,9 @@ export default function App() {
               <div className="security-badge-header">
                 [ SYS // WORKSPACE ACCESS ]
               </div>
+              <p style={{ fontSize: "0.76rem", color: "var(--text-muted)", maxWidth: "340px", margin: "0.1rem auto 0" }}>
+                Automated call recording intelligence &amp; lead management for mobile sales teams.
+              </p>
             </div>
 
             <div className="auth-card-container">
@@ -936,6 +939,9 @@ export default function App() {
                 <h3 style={{ fontSize: "1rem", fontWeight: "800", color: "#090d16" }}>
                   Company Log In
                 </h3>
+                <p style={{ fontSize: "0.74rem", color: "var(--text-muted)", marginTop: "0.15rem" }}>
+                  Sign in with your Company ID to access call recordings, AI summaries, and leads.
+                </p>
               </div>
 
               {/* SECURITY ERROR DISPLAY FOR INCORRECT ID / PASSWORD */}
@@ -1015,18 +1021,32 @@ export default function App() {
               <main className="mobile-hero">
                 <div className="hero-pill-badge">
                   <span className="badge-dot"></span>
-                  <span>Automated Mobile Call Intelligence</span>
+                  <span>AI Call CRM • Automated Workspace</span>
                 </div>
 
                 <h1 className="landing-headline">
-                  Smarter call notes for mobile teams.
-                  <br />
-                  <span>Turn call recordings into leads.</span>
+                  Turn phone calls into leads &amp; instant AI notes.
                 </h1>
 
                 <p className="landing-subheadline">
-                  When a phone call finishes on your Android or iOS device, AI Call CRM automatically extracts recording audio, creates a Lead profile, and generates executive summaries.
+                  Built for sales reps, field agents, brokers, and industry teams. The second a call finishes on your device, AI automatically extracts recording audio, creates lead profiles, and generates executive summaries.
                 </p>
+
+                {/* ABOVE-THE-FOLD 4-PILLAR VALUE MATRIX */}
+                <div className="hero-pillars-grid">
+                  <div className="hero-pillar-cell">
+                    <span className="hero-pillar-label">WHAT IT IS</span>
+                    <span className="hero-pillar-text">Auto AI call transcription, notes &amp; lead tracking CRM</span>
+                  </div>
+                  <div className="hero-pillar-cell">
+                    <span className="hero-pillar-label">WHO IT IS FOR</span>
+                    <span className="hero-pillar-text">Sales reps, field agents &amp; industry service teams</span>
+                  </div>
+                  <div className="hero-pillar-cell">
+                    <span className="hero-pillar-label">WHY IT MATTERS</span>
+                    <span className="hero-pillar-text">Zero manual note entry • $0 carrier telecom API fees</span>
+                  </div>
+                </div>
 
                 <div className="landing-cta-row">
                   <button
@@ -1043,6 +1063,9 @@ export default function App() {
                   >
                     Sync Mobile Call Audio
                   </button>
+                  <span className="hero-next-step-hint">
+                    NEXT: Explore active pipeline leads or sync a simulated call
+                  </span>
                 </div>
 
                 {/* Mobile Feature Highlights */}

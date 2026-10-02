@@ -1121,7 +1121,56 @@ input:checked + .toggle-slider:before {
   font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.55;
-  max-width: 480px;
+  max-width: 520px;
+}
+
+/* ABOVE-THE-FOLD 4-PILLAR VALUE MATRIX */
+.hero-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0.2rem 0 0.4rem;
+  text-align: left;
+}
+
+@media (max-width: 540px) {
+  .hero-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-pillar-cell {
+  background: #ffffff;
+  border: 1px solid var(--surface-border-strong);
+  border-radius: 4px;
+  padding: 0.55rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero-pillar-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-pillar-text {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.35;
+}
+
+.hero-next-step-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-subtle);
+  margin-top: 0.25rem;
 }
 
 .landing-cta-row {
