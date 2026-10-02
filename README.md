@@ -14,7 +14,7 @@
 
   # AI Call CRM
 
-  **A modern, high-performance mobile call intelligence & AI CRM platform** — supporting automated phone call recording sync, multi-provider AI transcription & executive summarization (Built-in Smart AI, OpenAI GPT-4o, Local Ollama Llama 3.2), 3-level lead directory drilldowns, universal deep search indexing app settings, real-time analytics metrics, and multi-channel OTP security.
+  **A modern, high-performance mobile AI CRM platform that auto-syncs phone call recordings, generates AI summaries (GPT-4o / Ollama), and manages lead pipelines with 1-tap SMS.**
 
   [Mobile CRM App](#key-features) • [Analytics Dashboard](#key-features) • [Documentation](#project-structure)
 
