@@ -942,7 +942,7 @@ export default function App() {
                 [ SYS // WORKSPACE ACCESS ]
               </div>
               <p style={{ fontSize: "0.76rem", color: "var(--text-muted)", maxWidth: "340px", margin: "0.1rem auto 0" }}>
-                Automated call recording intelligence &amp; lead management for mobile sales teams.
+                Instant AI call summaries &amp; task checklists for all types of users — sales reps, freelancers, consultants, brokers &amp; businesses.
               </p>
             </div>
 
@@ -1006,12 +1006,11 @@ export default function App() {
                 </button>
 
                 <div style={{ background: "#f8fafc", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "4px", padding: "0.75rem", textAlign: "center", fontSize: "0.72rem", color: "#475569", lineHeight: "1.45", marginTop: "0.2rem" }}>
-                  🌐 <strong>Company Registration Notice</strong>
-                  <br />
-                  New company registration is available exclusively on our website.
+                  <span style={{ fontFamily: "var(--font-mono)", fontWeight: "700", color: "#090d16", display: "block", marginBottom: "0.2rem" }}>[ NOTICE // COMPANY_REGISTRATION ]</span>
+                  New company onboarding is provisioned exclusively on our website portal.
                   <br />
                   <span style={{ color: "#090d16", fontWeight: "700" }}>
-                    Register your business on the website to get your Company ID.
+                    Register on the website to receive your instant Company ID.
                   </span>
                 </div>
 
@@ -1037,26 +1036,26 @@ export default function App() {
                 </div>
 
                 <h1 className="landing-headline">
-                  Turn phone calls into leads &amp; instant AI notes.
+                  Instant AI call summaries for every conversation &amp; user.
                 </h1>
 
                 <p className="landing-subheadline">
-                  Built for sales reps, field agents, brokers, and industry teams. The second a call finishes on your device, AI automatically extracts recording audio, creates lead profiles, and generates executive summaries.
+                  Built for all types of users — sales closers, freelancers, business owners, consultants, real estate brokers, and field teams. The second your phone call finishes, AI automatically creates a 2-line summary, action checklist, and 1-tap follow-up SMS.
                 </p>
 
                 {/* ABOVE-THE-FOLD 4-PILLAR VALUE MATRIX */}
                 <div className="hero-pillars-grid">
                   <div className="hero-pillar-cell">
                     <span className="hero-pillar-label">WHAT IT IS</span>
-                    <span className="hero-pillar-text">Auto AI call transcription, notes &amp; lead tracking CRM</span>
+                    <span className="hero-pillar-text">Instant AI call summarizer, audio transcription &amp; task checklist engine</span>
                   </div>
                   <div className="hero-pillar-cell">
                     <span className="hero-pillar-label">WHO IT IS FOR</span>
-                    <span className="hero-pillar-text">Sales reps, field agents &amp; industry service teams</span>
+                    <span className="hero-pillar-text">All users: Sales, freelancers, brokers, consultants, field teams &amp; businesses</span>
                   </div>
                   <div className="hero-pillar-cell">
                     <span className="hero-pillar-label">WHY IT MATTERS</span>
-                    <span className="hero-pillar-text">Zero manual note entry • $0 carrier telecom API fees</span>
+                    <span className="hero-pillar-text">Never lose spoken deal details • Instant 1-tap client follow-up SMS</span>
                   </div>
                 </div>
 
