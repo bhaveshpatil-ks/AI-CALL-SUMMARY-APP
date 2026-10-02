@@ -12,117 +12,236 @@
     <path d="M33 20.5h14.5v5.5H39v5.7h7.8v5.3H39V48h-6V20.5Z" fill="#ffffff" opacity="0.96" />
   </svg>
 
-  # AI Call CRM
+  # CRM_APP: AI Call CRM Mobile Platform
 
   **A modern, high-performance mobile AI CRM platform that auto-syncs phone call recordings, generates AI summaries (GPT-4o / Ollama), and manages lead pipelines with 1-tap SMS.**
 
-  [Mobile CRM App](#key-features) • [Analytics Dashboard](#key-features) • [Documentation](#project-structure)
+  [Repository](https://github.com/bhaveshpatil-ks/CRM_APP) • [Features](#key-features) • [React Native / Mobile Architecture](#mobile--react-native-source-architecture) • [AI Pipeline](#multi-engine-ai-summarizer-pipeline) • [Website Portal](https://github.com/bhaveshpatil-ks/CRM-Website)
 
   <br />
 
-  [![React](https://img.shields.io/badge/REACT_18-000000?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
-  [![Vite](https://img.shields.io/badge/VITE_5-000000?style=for-the-badge&logo=vite&logoColor=646CFF)](https://vitejs.dev/)
-  [![Node.js](https://img.shields.io/badge/NODE.JS_EXPRESS-000000?style=for-the-badge&logo=nodedotjs&logoColor=339933)](https://nodejs.org/)
-  [![Lenis](https://img.shields.io/badge/LENIS_MOMENTUM_SCROLL-000000?style=for-the-badge&logo=javascript&logoColor=84CC16)](https://lenis.darkroom.engineering/)
+  [![React](https://img.shields.io/badge/REACT_18-090D16?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+  [![Vite](https://img.shields.io/badge/VITE_5-090D16?style=for-the-badge&logo=vite&logoColor=646CFF)](https://vitejs.dev/)
+  [![React Native Compatible](https://img.shields.io/badge/REACT_NATIVE_BRIDGE-090D16?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+  [![Node.js](https://img.shields.io/badge/NODE.JS_EXPRESS-090D16?style=for-the-badge&logo=nodedotjs&logoColor=339933)](https://nodejs.org/)
+  [![License: MIT](https://img.shields.io/badge/LICENSE-MIT-10b981?style=for-the-badge)](LICENSE)
 
 </div>
 
 ---
 
-## Overview
+## 📱 Overview
 
-**AI Call CRM** is a full-stack mobile sales intelligence and call automation platform engineered to eliminate post-call manual entry friction and turn Android/iOS phone call recordings into structured, actionable CRM leads instantly.
+**CRM_APP** is a full-stack mobile sales intelligence and call automation application engineered to eliminate post-call manual entry friction and turn phone call recordings into structured, actionable CRM leads instantly.
 
-Instead of sales representatives manually typing call notes or forgetting follow-up details, **AI Call CRM** automatically detects when phone calls end, extracts raw recording audio, transcribes spoken text, generates executive summaries with action checklists, assigns commercial intent sentiment badges, and updates your lead pipeline in real time.
-
-> [!IMPORTANT]
-> **Open Source Mobile SaaS**: The mobile web application, full-stack Express API backend, multi-provider AI engine (Offline Smart AI, OpenAI GPT-4o, Local Ollama Llama 3.2), and universal deep search engine are 100% open source. You can explore the full codebase, run it locally, or contribute directly to the repository.
-
-> [!NOTE]
-> **Full Stack Monorepo Architecture**: AI Call CRM operates as a unified platform consisting of a high-performance **React 18 Single-Page Mobile Application** with Lenis momentum smooth scrolling connected to an **Express.js API backend**.
+Instead of sales representatives manually typing call notes or forgetting follow-up commitments, **CRM_APP** automatically detects when phone calls end, captures raw recording audio, transcribes spoken dialogue, generates structured executive summaries with action item checklists, assigns commercial sentiment tags, and updates the sales pipeline in real time.
 
 ---
 
-## Product Links
+## 🏛️ Above-The-Fold 4 Pillars Architecture
 
-| Product Surface | Location / Endpoint | Description |
+At the top of the application dashboard and login view, the interface immediately articulates its core identity:
+
+| Pillar | Category | Description |
 | :--- | :--- | :--- |
-| **Mobile App Shell** | `/frontend` | Mobile-framed React 18 single-page application |
-| **Express API Backend** | `/backend` | Node.js Express server handling AI summarization & auth |
-| **Live Local Dev App** | `http://localhost:5173/` | Local development preview server |
-| **GitHub Repository** | `bhaveshpatil-ks/AI-CALL-SUMMARY-APP` | Public open-source repository |
+| **01 // WHAT IT IS** | Core Product | Autonomous Mobile Call CRM that converts phone call recordings into actionable pipeline leads, transcripts, and AI summaries. |
+| **02 // WHO IT IS FOR** | Target Audience | Outbound sales reps, real estate brokers, field engineers, and client account managers handling high daily call volumes. |
+| **03 // WHY IT MATTERS** | Value Proposition | Zero post-call admin friction, 100% conversation recall, instant 1-tap carrier SMS follow-ups, and zero third-party telecom fees. |
+| **04 // WHAT TO DO NEXT** | Primary Action | Authenticate your Company ID or launch **Live Interactive Demo** to explore real call ingestion and AI processing. |
 
 ---
 
-## What Happens During Call Sync & AI Processing
+## ⚡ Mobile & React Native Source Architecture
 
-1. **Call Hang-Up Event**: The mobile device triggers an automated call recording sync event when a phone call finishes.
-2. **Short Call Filter**: The CRM inspects call duration and automatically filters out missed calls or wrong numbers (`<10s` duration).
-3. **Audio Waveform Generation**: Audio file is rendered with visual waveform bars and interactive playback controls (1.0x to 2.0x speeds).
-4. **Speech-to-Text Transcription**: Spoken dialogue between Agent and Customer is parsed into timestamped transcripts.
-5. **AI Summarization Engine**: Note content is processed using the active AI Provider (**Built-in Smart AI**, **OpenAI GPT-4o**, or **Local Ollama Llama 3.2**).
-6. **Commercial Intent Badging**: Sentiment analyzer assigns priority intent tags (`Positive / High Priority`, `Warm / High Intent`, `Urgent / Action Required`).
-7. **Lead Profile Creation**: Caller phone number, contact name, company, email, and industry category are formatted into a CRM Lead record.
-8. **Action Item Checklist**: Actionable tasks (e.g. *Send formal PDF quote*, *Dispatch field engineer*) are extracted into interactive checkboxes.
-9. **Auto-Copy Summary**: Structured call note summary is automatically copied to device clipboard for 1-tap sharing via WhatsApp or SMS.
-10. **Pipeline & Search Update**: Universal Deep Search and Analytics metrics update instantly across all views.
+CRM_APP is architected with a mobile-first design system (`375px × 720px` responsive phone shell) ready for standalone deployment or wrapping via **React Native** (using `react-native-webview` or native bridging).
 
----
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                   NATIVE ANDROID / IOS OS                   │
+├──────────────────────────────┬──────────────────────────────┤
+│ TelephonyManager & Call State│ FileObserver / MediaStore    │
+│ (ACTION_PHONE_STATE_CHANGED) │ (/Recordings/Call directory) │
+└──────────────┬───────────────┴──────────────┬───────────────┘
+               │                              │
+               ▼                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│            REACT NATIVE / HEADLESS JS BRIDGE                │
+│  - Filters calls < 10s (Missed / Voicemail filter)          │
+│  - Extracts audio buffer (M4A / AAC / MP3 / WAV)            │
+│  - Emits: window.postMessage({ type: 'CALL_SYNC_COMPLETED'})│
+└──────────────────────────────┬──────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                 CRM_APP CLIENT APPLICATION                  │
+│  - Audio Oscilloscope Studio (Waveform & range scrubber)    │
+│  - Multi-Engine AI Summarizer (Built-in / GPT-4o / Ollama)   │
+│  - 3-Level Lead Directory Drilldown                         │
+│  - Universal Deep Search & Pipeline Manager                 │
+│  - 1-Tap Carrier Actions: tel:${phone} & sms:${phone}       │
+└─────────────────────────────────────────────────────────────┘
+```
 
-## Key Features
+### 1. Native Android Call Recording Sync Mechanism
+- **Call State Listener**: Android's `TelephonyManager` / `PhoneStateListener` listens for the phone state transitioning from `CALL_STATE_OFFHOOK` to `CALL_STATE_IDLE`.
+- **Directory Watcher**: A native `FileObserver` monitors the device's call recording storage directory (e.g. `/storage/emulated/0/Recordings/Call` or `/CallRecordings`).
+- **Short Call Filter**: Calls under 10 seconds in duration are classified as missed calls or wrong numbers and automatically filtered out to keep the CRM clean.
+- **Audio Extraction**: The raw audio file is indexed with metadata (timestamp, phone number, duration) and bridged to the CRM ingestion pipeline.
 
-### Frontend & Mobile Web Application
+### 2. React Native Integration Bridge
+To bundle CRM_APP into an iOS/Android `.apk` or `.ipa`:
+```javascript
+// Native Android HeadlessJsTaskService / WebView Bridge Example
+import { WebView } from 'react-native-webview';
 
-* **📱 Mobile-First Framed Design**: Framed inside a clean `375px × 720px` responsive phone wrapper with translucent glassmorphism (`backdrop-filter: blur(20px)`).
-* **🌀 Lenis Smooth Inertia Scrolling**: Integrated `@studio-freight/lenis` for smooth momentum physics when scrolling through lead lists and analytics.
-* **🗂️ 3-Level Lead Directory Drilldown**:
-  * **Level 1**: Contacts directory list with instant search filtering.
-  * **Level 2**: Contact's associated call recordings, lead history, and intent badges.
-  * **Level 3**: Full AI Executive Notes, Action Items, Waveform Audio Player, and Spoken Transcript.
-* **🔍 Universal Deep Search**: Multi-index search engine querying Contacts, AI Summaries, Spoken Transcript Words, and **App Settings Menu Options**.
-* **📊 Real-Time Analytics Dashboard**: Visual stat widgets tracking call volume, 100% automated AI summary rates, average 0.4s processing speeds, and Call Intent distribution charts.
-* **👤 Dedicated Company Profile & OTP Verification**: Read-only profile view with an explicit **`✏️ Edit Details`** mode toggle. Edits require multi-channel verification (**📱 Mobile Number** or **📧 Company Email**) with 4-digit OTP security (`1234`).
-* **🚨 Security & Account Purge**: Brute-force protection, Biometric Face ID lock toggle, and permanent **Delete Account & Purge Data** capability.
+export default function NativeAppShell() {
+  const handleMessage = (event) => {
+    const data = JSON.parse(event.nativeEvent.data);
+    if (data.type === 'TRIGGER_NATIVE_DIALER') {
+      Linking.openURL(`tel:${data.phone}`);
+    } else if (data.type === 'TRIGGER_NATIVE_SMS') {
+      Linking.openURL(`sms:${data.phone}?body=${encodeURIComponent(data.message)}`);
+    }
+  };
 
-### Analysis Engine & Backend
-
-* **⚡ Zero-Setup Built-in Smart AI**: Instant offline summarizer requiring zero API keys or external server dependencies.
-* **✨ Cloud OpenAI / Gemini Integration**: Optional GPT-4o API integration for deep enterprise commercial intent extraction.
-* **💻 Local Ollama (Llama 3.2)**: Native localhost integration for running private open-source LLMs offline.
-* **🚀 Express.js Server API**: Light Node.js REST API providing `/api/auth/me` and `/api/ai/summarize-note` endpoints with CORS guards.
-
----
-
-## Project Structure
-
-| Directory | Description |
-| :--- | :--- |
-| **`frontend/`** | React 18 single-page mobile web application, glassmorphic styles, Lenis momentum scroll, and mock datasets. |
-| **`backend/`** | Node.js Express 4 API server handling AI summary processing endpoints and CORS security. |
-
----
-
-## Main Files
-
-### Frontend (`frontend/`)
-
-| File | Purpose |
-| :--- | :--- |
-| `src/App.jsx` | Main application container, router view management, profile read-only/edit toggle, OTP modal & search engine. |
-| `src/api.js` | Centralized API client helper supporting Built-in Smart AI, OpenAI GPT-4o, and Local Ollama integrations. |
-| `src/sampleData.js` | Industry presets (Manufacturing, Real Estate, B2B Sales, Healthcare, Logistics) and initial mock leads. |
-| `src/styles.css` | Glassmorphic design system, CSS variables, mobile aspect-ratio framing, and proportional component styles. |
-| `src/main.jsx` | React 18 DOM root rendering entry point. |
-
-### Backend (`backend/`)
-
-| File | Purpose |
-| :--- | :--- |
-| `server.js` | Express server entry point configuring CORS, JSON parsing, auth status, and AI summarization endpoints. |
-| `package.json` | Backend dependencies (`express`, `cors`). |
+  return (
+    <WebView
+      source={{ uri: 'https://your-crm-app-domain.vercel.app' }}
+      onMessage={handleMessage}
+      allowsInlineMediaPlayback
+      mediaPlaybackRequiresUserAction={false}
+    />
+  );
+}
+```
 
 ---
 
-## License
+## 🤖 Multi-Engine AI Summarizer Pipeline
 
-This project is open-source and available under the [MIT License](LICENSE).
+CRM_APP supports three interchangeable AI inference backends configured dynamically from in-app settings:
+
+| Provider | Connectivity | Setup Required | Best For |
+| :--- | :--- | :--- | :--- |
+| **Built-in Smart AI** | 100% Offline | None (Zero-setup) | Instant call analysis, key phrase matching, and action items with zero latency and zero API cost. |
+| **Cloud OpenAI (GPT-4o)** | Cloud API | API Key in Settings | Enterprise commercial intent scoring, complex nuance detection, and objection handling analysis. |
+| **Local Ollama (Llama 3.2)** | Localhost Edge | Local Ollama running | 100% private, on-premise execution where audio transcripts never leave the corporate perimeter. |
+
+### Summary Output Structure:
+- **`[ SPECIMEN // EXECUTIVE_SUMMARY ]`**: High-density 2-sentence briefing capturing the primary customer request and agreed resolution.
+- **`[ ACTION // CHECKLIST ]`**: Extracted actionable tasks formatted into interactive checkboxes (e.g., *Dispatch formal PDF contract*, *Verify shipping address*).
+- **Commercial Intent Badge**: Automatically graded intent status (`Positive / High Intent`, `Warm / Follow-Up Needed`, `Urgent / Support Escalation`).
+- **1-Tap Suggested SMS**: Pre-formatted follow-up SMS ready to send directly via the mobile device carrier with a single tap.
+
+---
+
+## 🎛️ Audio Oscilloscope Studio
+
+The app features an integrated audio playback laboratory:
+- **Waveform Visualizer**: Generates dynamic audio bar amplitudes corresponding to conversation energy.
+- **Minimalist Range Scrubber**: Custom range slider with high-contrast indicator thumb (`#10b981`) and digital monospace clock counters (`00:00 / 02:45`).
+- **Clean Vector Controls**: Crisp vector SVGs for Play and Pause (zero emoji or font glyph inconsistencies across platforms).
+- **Speed Multiplier**: Multi-speed playback toggle (`1.0x`, `1.5x`, `2.0x`).
+
+---
+
+## 🔑 Key Features
+
+### 1. 3-Level Lead Directory Drilldown
+- **Level 1 (Directory)**: Searchable list of all customer contacts with industry tags, last contact date, and stage badges.
+- **Level 2 (Audio History)**: View all recorded calls with duration meters and timestamped history for that specific lead.
+- **Level 3 (Inspection Studio)**: Full AI executive summary, action items checklist, audio player, and complete spoken transcript.
+
+### 2. Universal Deep Search
+Multi-target indexing allowing reps to search across:
+- **Contact Names & Phone Numbers**
+- **AI Summary Concepts & Commercial Topics**
+- **Spoken Transcript Words**
+- **App Settings Options** (e.g. typing "biometric" jumps directly to security settings)
+
+### 3. Zero-Telecom-Cost 1-Tap Actions
+- Tap **Call** to launch the device's native carrier dialer (`tel:${phone}`).
+- Tap **Send Mobile SMS** to launch the device's native SMS app (`sms:${phone}?body=...`).
+- Eliminates expensive per-minute VoIP/telephony API fees (e.g. Twilio, Plivo).
+
+### 4. Enterprise Security & Biometrics
+- **Profile Lock**: Read-only profile view with an explicit `Edit Details` toggle.
+- **Two-Factor OTP Security**: Edits require 4-digit verification code (`1234`) dispatched via SMS or Company Email.
+- **Face ID / Biometric Lock**: In-app toggle for biometric verification on boot.
+- **Permanent Account Purge**: Instant wipe of local credentials, session tokens, and cached lead records.
+
+---
+
+## 📂 Project Directory Structure
+
+```text
+CRM_APP/
+├── .github/
+│   └── workflows/
+│       └── ci.yml               # GitHub Actions CI build verification workflow
+├── frontend/                    # React 18 Mobile Application
+│   ├── public/                  # Static assets & brand mark
+│   ├── src/
+│   │   ├── api.js               # Multi-engine AI client (Built-in, OpenAI, Ollama)
+│   │   ├── App.jsx              # Mobile application container & router
+│   │   ├── main.jsx             # React DOM entrypoint
+│   │   ├── sampleData.js        # Lead records, audio transcripts & industry presets
+│   │   └── styles.css           # Minimal mobile design system & waveform styles
+│   ├── index.html               # Mobile viewport & Google Fonts (Inter + JetBrains Mono)
+│   ├── package.json             # Frontend dependencies & Vite scripts
+│   └── vite.config.js           # Vite bundler configuration
+├── backend/                     # Node.js Express 4 API Server
+│   ├── package.json             # Express dependencies (express, cors)
+│   └── server.js                # Express API server & CORS configuration
+├── .gitignore                   # Ignores node_modules, build output, and separate web repo
+├── package.json                 # Root script container
+└── README.md                    # Mobile app architecture & documentation
+```
+
+---
+
+## 🚀 Quick Start (Run Locally)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/bhaveshpatil-ks/CRM_APP.git
+cd CRM_APP
+```
+
+### 2. Run the Mobile Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+*Frontend runs locally at: `http://localhost:5173`*
+
+### 3. Run the Backend API Server (Optional for Cloud AI)
+```bash
+cd ../backend
+npm install
+node server.js
+```
+*Backend runs locally at: `http://localhost:4000`*
+
+---
+
+## 🔑 Demo & Test Credentials
+
+You can test the mobile application immediately:
+
+- **Company ID**: `CALL-240001`
+- **Password**: `demo123`
+- **Demo Mode**: Click **`Live Interactive Demo`** on the login screen to launch preloaded leads without entering credentials.
+- **2FA OTP Code**: `1234`
+
+---
+
+## 🔗 Related Repositories
+
+- **Website & Company Portal**: [bhaveshpatil-ks/CRM-Website](https://github.com/bhaveshpatil-ks/CRM-Website) — Full-stack company onboarding, admin governance, and automated Company ID generator.
+
+---
+
+## 📄 License
+
+This project is open-source under the [MIT License](LICENSE).
