@@ -736,9 +736,9 @@ export default function App() {
       {showProfileOtpModal && (
         <>
           <div className="drawer-backdrop" onClick={() => setShowProfileOtpModal(false)} />
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "330px", background: "#ffffff", borderRadius: "24px", padding: "1.25rem", zIndex: "270", boxShadow: "0 25px 60px rgba(0,0,0,0.45)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
-            <div style={{ textAlign: "center", fontSize: "2rem" }}>🔐</div>
-            <h3 style={{ fontSize: "1.05rem", fontWeight: "900", color: "#111111", textAlign: "center" }}>
+          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "340px", background: "#ffffff", borderRadius: "6px", border: "1px solid var(--surface-border-strong)", padding: "1.25rem", zIndex: "270", boxShadow: "0 20px 48px rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+            <div style={{ textAlign: "center", fontSize: "1.8rem" }}>🔐</div>
+            <h3 style={{ fontSize: "1.05rem", fontWeight: "800", color: "#090d16", textAlign: "center" }}>
               Verify Profile Changes
             </h3>
             
@@ -749,7 +749,7 @@ export default function App() {
                 </p>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  <label style={{ display: "flex", alignItems: "center", gap: "0.6rem", padding: "0.65rem 0.85rem", border: "1px solid var(--surface-border)", borderRadius: "12px", background: otpChannel === "mobile" ? "rgba(132,204,22,0.12)" : "rgba(0,0,0,0.02)", cursor: "pointer" }}>
+                  <label style={{ display: "flex", alignItems: "center", gap: "0.6rem", padding: "0.65rem 0.85rem", border: "1px solid var(--surface-border)", borderRadius: "4px", background: otpChannel === "mobile" ? "rgba(16,185,129,0.08)" : "rgba(0,0,0,0.02)", cursor: "pointer" }}>
                     <input
                       type="radio"
                       name="otpChannel"
@@ -759,11 +759,11 @@ export default function App() {
                     />
                     <div style={{ fontSize: "0.78rem" }}>
                       <strong>📱 Mobile Number</strong>
-                      <div style={{ fontSize: "0.7rem", color: "var(--text-subtle)" }}>{userProfile.phone}</div>
+                      <div style={{ fontSize: "0.7rem", color: "var(--text-subtle)", fontFamily: "var(--font-mono)" }}>{userProfile.phone}</div>
                     </div>
                   </label>
 
-                  <label style={{ display: "flex", alignItems: "center", gap: "0.6rem", padding: "0.65rem 0.85rem", border: "1px solid var(--surface-border)", borderRadius: "12px", background: otpChannel === "email" ? "rgba(132,204,22,0.12)" : "rgba(0,0,0,0.02)", cursor: "pointer" }}>
+                  <label style={{ display: "flex", alignItems: "center", gap: "0.6rem", padding: "0.65rem 0.85rem", border: "1px solid var(--surface-border)", borderRadius: "4px", background: otpChannel === "email" ? "rgba(16,185,129,0.08)" : "rgba(0,0,0,0.02)", cursor: "pointer" }}>
                     <input
                       type="radio"
                       name="otpChannel"
@@ -773,7 +773,7 @@ export default function App() {
                     />
                     <div style={{ fontSize: "0.78rem" }}>
                       <strong>📧 Company Email</strong>
-                      <div style={{ fontSize: "0.7rem", color: "var(--text-subtle)" }}>{userProfile.email}</div>
+                      <div style={{ fontSize: "0.7rem", color: "var(--text-subtle)", fontFamily: "var(--font-mono)" }}>{userProfile.email}</div>
                     </div>
                   </label>
                 </div>
@@ -817,8 +817,8 @@ export default function App() {
                   ))}
                 </div>
 
-                <div style={{ textAlign: "center", fontSize: "0.72rem", color: "var(--brand-olive-dark)", fontWeight: "800" }}>
-                  💡 Demo Verification OTP: 1234
+                <div style={{ textAlign: "center", fontSize: "0.72rem", color: "#059669", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
+                  [ DEMO OTP: 1234 ]
                 </div>
 
                 <button
@@ -836,18 +836,18 @@ export default function App() {
 
       {/* ACCOUNT DELETED NOTIFICATION BANNER */}
       {accountDeletedNotice && (
-        <div style={{ background: "#dc2626", color: "#ffffff", padding: "0.75rem 1rem", textAlign: "center", fontSize: "0.78rem", fontWeight: "800" }}>
+        <div style={{ background: "#dc2626", color: "#ffffff", padding: "0.75rem 1rem", textAlign: "center", fontSize: "0.78rem", fontWeight: "800", fontFamily: "var(--font-mono)" }}>
           ⚠️ Account and all call recording data have been permanently deleted.
         </div>
       )}
 
       {/* SYNC NOTIFICATION BANNER */}
       {syncNotice && (
-        <div style={{ background: "#111111", color: "#ffffff", padding: "0.75rem 1rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontSize: "0.78rem", fontWeight: "700" }}>
-            📞 Synced call from {syncNotice.name} — Lead created!
+        <div style={{ background: "#090d16", color: "#ffffff", padding: "0.75rem 1rem", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+          <span style={{ fontSize: "0.78rem", fontWeight: "600" }}>
+            📞 Synced call from {syncNotice.name} — Lead created
           </span>
-          <span style={{ background: "#84cc16", color: "#0f172a", fontSize: "0.68rem", padding: "0.15rem 0.5rem", borderRadius: "999px", fontWeight: "800" }}>
+          <span style={{ background: "rgba(16,185,129,0.15)", color: "#10b981", fontSize: "0.68rem", padding: "0.2rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
             SYNCED
           </span>
         </div>
@@ -855,8 +855,8 @@ export default function App() {
 
       {/* SETTINGS SAVED TOAST */}
       {settingsSavedToast && (
-        <div style={{ position: "absolute", top: "65px", left: "50%", transform: "translateX(-50%)", background: "#84cc16", color: "#0f172a", padding: "0.45rem 1rem", borderRadius: "999px", fontWeight: "800", fontSize: "0.75rem", zIndex: "200", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}>
-          ✓ Settings Saved Successfully!
+        <div style={{ position: "absolute", top: "65px", left: "50%", transform: "translateX(-50%)", background: "#090d16", color: "#10b981", border: "1px solid rgba(16,185,129,0.4)", padding: "0.45rem 1rem", borderRadius: "4px", fontFamily: "var(--font-mono)", fontWeight: "700", fontSize: "0.75rem", zIndex: "200", boxShadow: "0 8px 24px rgba(0,0,0,0.4)" }}>
+          ✓ SETTINGS_SAVED_OK
         </div>
       )}
 
@@ -864,7 +864,7 @@ export default function App() {
       {deleteAccountModalOpen && (
         <>
           <div className="drawer-backdrop" onClick={() => setDeleteAccountModalOpen(false)} />
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "330px", background: "#ffffff", borderRadius: "22px", padding: "1.2rem", zIndex: "260", boxShadow: "0 25px 60px rgba(0,0,0,0.45)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "340px", background: "#ffffff", borderRadius: "6px", border: "1px solid var(--surface-border-strong)", padding: "1.25rem", zIndex: "260", boxShadow: "0 20px 48px rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
             <div style={{ textAlign: "center", fontSize: "2rem" }}>🚨</div>
             <h3 style={{ fontSize: "1.05rem", fontWeight: "900", color: "#dc2626", textAlign: "center" }}>
               Delete Account &amp; Purge Data?
@@ -897,19 +897,19 @@ export default function App() {
       {summaryModalLead && (
         <>
           <div className="drawer-backdrop" onClick={() => setSummaryModalLead(null)} />
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "330px", background: "#ffffff", borderRadius: "22px", padding: "1.1rem", zIndex: "250", boxShadow: "0 20px 50px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid var(--surface-border)", paddingBottom: "0.4rem" }}>
-              <h3 style={{ fontSize: "0.95rem", fontWeight: "800" }}>⚡ AI Call Summary</h3>
-              <button type="button" onClick={() => setSummaryModalLead(null)} style={{ border: "none", background: "none", fontSize: "1.1rem", fontWeight: "800", cursor: "pointer" }}>✕</button>
+          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90%", maxWidth: "340px", background: "#ffffff", borderRadius: "6px", border: "1px solid var(--surface-border-strong)", padding: "1.25rem", zIndex: "250", boxShadow: "0 20px 48px rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid var(--surface-border)", paddingBottom: "0.45rem" }}>
+              <h3 style={{ fontSize: "0.95rem", fontWeight: "800", color: "#090d16" }}>⚡ AI Call Summary</h3>
+              <button type="button" onClick={() => setSummaryModalLead(null)} style={{ border: "none", background: "none", fontSize: "1.1rem", fontWeight: "800", cursor: "pointer", color: "#64748b" }}>✕</button>
             </div>
             <div>
-              <strong style={{ fontSize: "0.88rem", color: "#111" }}>{summaryModalLead.name}</strong>
-              <div style={{ fontSize: "0.74rem", color: "var(--text-muted)" }}>{summaryModalLead.company} • {summaryModalLead.phone}</div>
+              <strong style={{ fontSize: "0.92rem", color: "#090d16" }}>{summaryModalLead.name}</strong>
+              <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{summaryModalLead.company} • {summaryModalLead.phone}</div>
             </div>
             <div className="note-box" style={{ margin: 0 }}>
               {summaryModalLead.notes[0] || "AI processed call audio automatically. Quote request and spec verified."}
             </div>
-            <a href={`sms:${summaryModalLead.phone}`} className="btn-black-pill btn-sms-pill" style={{ justifyContent: "center" }}>
+            <a href={`sms:${summaryModalLead.phone}`} className="btn-black-pill btn-sms-pill" style={{ justifyContent: "center", padding: "0.55rem" }}>
               💬 Send Mobile SMS
             </a>
           </div>
@@ -923,18 +923,18 @@ export default function App() {
           <main style={{ display: "flex", flexDirection: "column", gap: "1.2rem", margin: "auto 0" }}>
             <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.45rem" }}>
               <BrandMark />
-              <h2 style={{ fontSize: "1.4rem", fontWeight: "900", color: "#111111", letterSpacing: "-0.02em" }}>
+              <h2 style={{ fontSize: "1.4rem", fontWeight: "800", color: "#090d16", letterSpacing: "-0.03em" }}>
                 AI Call CRM
               </h2>
               <div className="security-badge-header">
-                🔒 Enterprise Security
+                [ SYS // WORKSPACE ACCESS ]
               </div>
             </div>
 
             <div className="auth-card-container">
-              <div style={{ textAlign: "center", paddingBottom: "0.3rem", borderBottom: "1px solid var(--surface-border)" }}>
-                <h3 style={{ fontSize: "1rem", fontWeight: "800", color: "#111" }}>
-                  🔓 Company Log In
+              <div style={{ textAlign: "center", paddingBottom: "0.4rem", borderBottom: "1px solid var(--surface-border)" }}>
+                <h3 style={{ fontSize: "1rem", fontWeight: "800", color: "#090d16" }}>
+                  Company Log In
                 </h3>
               </div>
 
@@ -951,7 +951,7 @@ export default function App() {
                   <input
                     type="text"
                     className="auth-text-input"
-                    placeholder="e.g. CMP-84920"
+                    placeholder="e.g. CALL-240001 or CMP-84920"
                     value={loginCompanyId}
                     onChange={(e) => setLoginCompanyId(e.target.value)}
                     required
@@ -987,12 +987,12 @@ export default function App() {
                   🔓 Log In to Mobile CRM
                 </button>
 
-                <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "10px", padding: "0.65rem 0.75rem", textAlign: "center", fontSize: "0.72rem", color: "#475569", lineHeight: "1.4", marginTop: "0.2rem" }}>
+                <div style={{ background: "#f8fafc", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "4px", padding: "0.75rem", textAlign: "center", fontSize: "0.72rem", color: "#475569", lineHeight: "1.45", marginTop: "0.2rem" }}>
                   🌐 <strong>Company Registration Notice</strong>
                   <br />
                   New company registration is available exclusively on our website.
                   <br />
-                  <span style={{ color: "#0f172a", fontWeight: "700" }}>
+                  <span style={{ color: "#090d16", fontWeight: "700" }}>
                     Register your business on the website to get your Company ID.
                   </span>
                 </div>
@@ -1085,8 +1085,8 @@ export default function App() {
                 </div>
 
                 {profileSavedToast && (
-                  <div style={{ background: "#84cc16", color: "#0f172a", padding: "0.6rem 1rem", borderRadius: "14px", fontWeight: "800", fontSize: "0.78rem", boxShadow: "0 4px 14px rgba(0,0,0,0.15)" }}>
-                    ✓ Profile details verified &amp; saved successfully!
+                  <div style={{ background: "#090d16", color: "#10b981", border: "1px solid rgba(16,185,129,0.3)", padding: "0.55rem 1rem", borderRadius: "4px", fontFamily: "var(--font-mono)", fontWeight: "700", fontSize: "0.75rem", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}>
+                    ✓ PROFILE_DETAILS_VERIFIED_OK
                   </div>
                 )}
 
@@ -1118,45 +1118,45 @@ export default function App() {
                   {!isEditingProfile ? (
                     /* READ-ONLY VIEW OF COMPANY PROFILE DETAILS */
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
-                      <div style={{ padding: "0.6rem 0.8rem", background: "rgba(255,255,255,0.9)", border: "1px solid var(--surface-border)", borderRadius: "12px" }}>
-                        <span style={{ fontSize: "0.65rem", fontWeight: "800", color: "var(--text-muted)", textTransform: "uppercase" }}>
+                      <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
+                        <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
                           🏢 Business / Company Name
                         </span>
-                        <div style={{ fontSize: "0.9rem", fontWeight: "800", color: "#111111", marginTop: "0.1rem" }}>
+                        <div style={{ fontSize: "0.9rem", fontWeight: "800", color: "#090d16", marginTop: "0.1rem" }}>
                           {userProfile.companyName}
                         </div>
                       </div>
 
-                      <div style={{ padding: "0.6rem 0.8rem", background: "rgba(255,255,255,0.9)", border: "1px solid var(--surface-border)", borderRadius: "12px" }}>
-                        <span style={{ fontSize: "0.65rem", fontWeight: "800", color: "var(--text-muted)", textTransform: "uppercase" }}>
+                      <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
+                        <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
                           📱 Registered Phone Number
                         </span>
-                        <div style={{ fontSize: "0.9rem", fontWeight: "800", color: "#111111", marginTop: "0.1rem" }}>
+                        <div style={{ fontSize: "0.9rem", fontWeight: "700", color: "#090d16", marginTop: "0.1rem", fontFamily: "var(--font-mono)" }}>
                           {userProfile.phone}
                         </div>
                       </div>
 
-                      <div style={{ padding: "0.6rem 0.8rem", background: "rgba(255,255,255,0.9)", border: "1px solid var(--surface-border)", borderRadius: "12px" }}>
-                        <span style={{ fontSize: "0.65rem", fontWeight: "800", color: "var(--text-muted)", textTransform: "uppercase" }}>
+                      <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
+                        <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
                           📧 Company Email Address
                         </span>
-                        <div style={{ fontSize: "0.9rem", fontWeight: "800", color: "#111111", marginTop: "0.1rem" }}>
+                        <div style={{ fontSize: "0.9rem", fontWeight: "700", color: "#090d16", marginTop: "0.1rem", fontFamily: "var(--font-mono)" }}>
                           {userProfile.email}
                         </div>
                       </div>
 
-                      <div style={{ padding: "0.6rem 0.8rem", background: "rgba(255,255,255,0.9)", border: "1px solid var(--surface-border)", borderRadius: "12px" }}>
-                        <span style={{ fontSize: "0.65rem", fontWeight: "800", color: "var(--text-muted)", textTransform: "uppercase" }}>
+                      <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
+                        <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
                           📍 Business Address
                         </span>
-                        <div style={{ fontSize: "0.82rem", fontWeight: "700", color: "#111111", marginTop: "0.1rem" }}>
-                          {userProfile.address}
+                        <div style={{ fontSize: "0.82rem", fontWeight: "600", color: "#090d16", marginTop: "0.1rem" }}>
+                          {userProfile.address || "Standard Industrial Zone"}
                         </div>
                       </div>
 
-                      <div style={{ padding: "0.6rem 0.8rem", background: "rgba(132,204,22,0.12)", border: "1px solid rgba(132,204,22,0.3)", borderRadius: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <span style={{ fontSize: "0.7rem", fontWeight: "800", color: "var(--brand-olive-dark)" }}>Website Registration ID:</span>
-                        <strong style={{ fontSize: "0.88rem", color: "var(--brand-olive-dark)", fontFamily: "monospace" }}>{userProfile.companyId}</strong>
+                      <div style={{ padding: "0.65rem 0.85rem", background: "rgba(2,132,199,0.06)", border: "1px solid rgba(2,132,199,0.2)", borderRadius: "4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <span style={{ fontSize: "0.7rem", fontWeight: "700", color: "#0284c7", fontFamily: "var(--font-mono)" }}>Website Registration ID:</span>
+                        <strong style={{ fontSize: "0.88rem", color: "#0284c7", fontFamily: "var(--font-mono)", fontWeight: "800" }}>{userProfile.companyId}</strong>
                       </div>
 
                       <button
@@ -1358,7 +1358,7 @@ export default function App() {
                         placeholder="Search contact..."
                         value={searchFilter}
                         onChange={(e) => setSearchFilter(e.target.value)}
-                        style={{ padding: "0.35rem 0.65rem", borderRadius: "999px", border: "1px solid var(--surface-border)", fontSize: "0.75rem", width: "120px" }}
+                        style={{ padding: "0.35rem 0.65rem", borderRadius: "4px", border: "1px solid var(--surface-border-strong)", fontSize: "0.75rem", fontFamily: "var(--font-mono)", width: "130px" }}
                       />
                     </div>
 
@@ -1378,7 +1378,7 @@ export default function App() {
                             </div>
                             <div>
                               <div className="contact-name-title">{contact.name}</div>
-                              <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{contact.company}</div>
+                              <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{contact.company}</div>
                             </div>
                           </div>
                           <span className="contact-chevron">→</span>
@@ -1400,7 +1400,7 @@ export default function App() {
                       </button>
                       <div>
                         <h3 style={{ fontSize: "1rem", fontWeight: "800" }}>{activeContact.name}</h3>
-                        <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
+                        <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
                           {activeContact.company} • {activeContact.phone}
                         </div>
                       </div>
@@ -1426,14 +1426,14 @@ export default function App() {
                           >
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                               <div className="lead-title-text">{call.title}</div>
-                              <span style={{ fontSize: "0.72rem", background: "rgba(132,204,22,0.18)", color: "var(--brand-olive-dark)", padding: "0.15rem 0.5rem", borderRadius: "999px", fontWeight: "800" }}>
+                              <span style={{ fontSize: "0.68rem", background: "rgba(16,185,129,0.12)", color: "#059669", padding: "0.2rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
                                 {call.sentiment}
                               </span>
                             </div>
                             <p className="lead-snippet-text">{call.summary}</p>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.72rem", color: "var(--text-subtle)", marginTop: "0.2rem" }}>
-                              <span>⏱️ {call.duration}</span>
-                              <span style={{ fontWeight: "800", color: "var(--brand-olive)" }}>View AI Notes &amp; Audio →</span>
+                              <span style={{ fontFamily: "var(--font-mono)" }}>⏱️ {call.duration}</span>
+                              <span style={{ fontWeight: "700", color: "#0284c7", fontFamily: "var(--font-mono)" }}>VIEW_AI_AUDIO →</span>
                             </div>
                           </div>
                         ))}
@@ -1454,7 +1454,7 @@ export default function App() {
                       </button>
                       <div style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         <h3 style={{ fontSize: "0.95rem", fontWeight: "800" }}>{activeLeadCall.title}</h3>
-                        <div style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}>{activeLeadCall.client}</div>
+                        <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>{activeLeadCall.client}</div>
                       </div>
                     </div>
 
@@ -1462,9 +1462,9 @@ export default function App() {
                       <div className="panel-header">
                         <div>
                           <h3 style={{ color: "#ffffff" }}>🎙️ {activeLeadCall.title}</h3>
-                          <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>{activeLeadCall.client}</div>
+                          <div style={{ fontSize: "0.72rem", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>{activeLeadCall.client}</div>
                         </div>
-                        <span style={{ padding: "0.25rem 0.6rem", background: "rgba(132,204,22,0.2)", color: "#84cc16", borderRadius: "999px", fontSize: "0.72rem", fontWeight: "800" }}>
+                        <span style={{ padding: "0.2rem 0.5rem", background: "rgba(16,185,129,0.15)", color: "#10b981", borderRadius: "2px", fontFamily: "var(--font-mono)", fontSize: "0.68rem", fontWeight: "700" }}>
                           {activeLeadCall.sentiment}
                         </span>
                       </div>
@@ -1549,8 +1549,8 @@ export default function App() {
               <main style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>🗂️ Lead Pipeline</h2>
-                  <span style={{ fontSize: "0.72rem", background: "rgba(87,109,38,0.12)", color: "var(--brand-olive-dark)", padding: "0.18rem 0.55rem", borderRadius: "999px", fontWeight: "800" }}>
-                    {pipelineLeads.length} Active Leads
+                  <span style={{ fontSize: "0.68rem", background: "rgba(2,132,199,0.1)", color: "#0284c7", padding: "0.2rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
+                    [ {pipelineLeads.length}_LEADS ]
                   </span>
                 </div>
 
@@ -1629,8 +1629,8 @@ export default function App() {
               <main style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>📊 Analytics &amp; Metrics</h2>
-                  <span style={{ fontSize: "0.72rem", background: "rgba(132,204,22,0.18)", color: "var(--brand-olive-dark)", padding: "0.18rem 0.55rem", borderRadius: "999px", fontWeight: "800" }}>
-                    ● Live AI Engine
+                  <span style={{ fontSize: "0.68rem", background: "rgba(16,185,129,0.12)", color: "#059669", padding: "0.2rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
+                    [ SYS // LIVE_ENGINE ]
                   </span>
                 </div>
 
@@ -1703,25 +1703,25 @@ export default function App() {
                       <button
                         type="button"
                         onClick={handleLogout}
-                        style={{ background: "rgba(239,68,68,0.2)", color: "#ef4444", border: "1px solid rgba(239,68,68,0.4)", borderRadius: "999px", padding: "0.2rem 0.6rem", fontSize: "0.7rem", fontWeight: "800", cursor: "pointer" }}
+                        style={{ background: "rgba(239,68,68,0.15)", color: "#ef4444", border: "1px solid rgba(239,68,68,0.3)", borderRadius: "3px", padding: "0.25rem 0.6rem", fontSize: "0.68rem", fontFamily: "var(--font-mono)", fontWeight: "700", cursor: "pointer" }}
                       >
-                        🔒 Log Out
+                        🔒 LOG_OUT
                       </button>
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <div>
-                          <strong style={{ fontSize: "1rem", color: "#84cc16" }}>{userProfile.companyName}</strong>
-                          <div style={{ fontSize: "0.74rem", color: "#9ca3af" }}>Registered Mobile: {userProfile.phone}</div>
+                          <strong style={{ fontSize: "1rem", color: "#10b981" }}>{userProfile.companyName}</strong>
+                          <div style={{ fontSize: "0.72rem", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>TEL: {userProfile.phone}</div>
                         </div>
-                        <div style={{ background: "rgba(255,255,255,0.1)", padding: "0.35rem 0.65rem", borderRadius: "10px", fontFamily: "monospace", fontSize: "0.85rem", fontWeight: "900", color: "#84cc16" }}>
+                        <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", padding: "0.3rem 0.65rem", borderRadius: "3px", fontFamily: "var(--font-mono)", fontSize: "0.82rem", fontWeight: "800", color: "#10b981" }}>
                           ID: {userProfile.companyId}
                         </div>
                       </div>
 
-                      <div style={{ marginTop: "0.3rem", padding: "0.45rem", background: "rgba(255,255,255,0.05)", borderRadius: "8px", fontSize: "0.68rem", color: "#9ca3af", fontFamily: "monospace" }}>
-                        🔑 Active Session Token: {userProfile.sessionToken.substring(0, 32)}...
+                      <div style={{ marginTop: "0.2rem", padding: "0.45rem", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "3px", fontSize: "0.68rem", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>
+                        🔑 TOKEN: {userProfile.sessionToken.substring(0, 32)}...
                       </div>
                     </div>
                   </div>
@@ -1731,8 +1731,8 @@ export default function App() {
                 <div className="panel-box">
                   <div className="panel-header">
                     <h3>🛡️ Security Controls</h3>
-                    <span style={{ fontSize: "0.68rem", background: "rgba(132,204,22,0.2)", color: "var(--brand-olive-dark)", padding: "0.15rem 0.5rem", borderRadius: "999px", fontWeight: "800" }}>
-                      ENCRYPTED
+                    <span style={{ fontSize: "0.64rem", background: "rgba(16,185,129,0.12)", color: "#059669", padding: "0.18rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
+                      [ ENCRYPTED ]
                     </span>
                   </div>
 
@@ -1903,7 +1903,7 @@ export default function App() {
                     <button
                       type="button"
                       onClick={handleResetData}
-                      style={{ background: "rgba(0,0,0,0.04)", color: "#111", border: "1px solid var(--surface-border)", borderRadius: "999px", padding: "0.65rem", fontWeight: "700", fontSize: "0.8rem", cursor: "pointer" }}
+                      style={{ background: "#f8fafc", color: "#090d16", border: "1px solid var(--surface-border-strong)", borderRadius: "4px", padding: "0.65rem", fontFamily: "var(--font-sans)", fontWeight: "600", fontSize: "0.8rem", cursor: "pointer" }}
                     >
                       🔄 Reset CRM Sample Data
                     </button>
@@ -1914,8 +1914,8 @@ export default function App() {
                 <div className="danger-panel-box">
                   <div className="panel-header" style={{ borderBottomColor: "rgba(239,68,68,0.2)" }}>
                     <h3 style={{ color: "#dc2626" }}>⚠️ Danger Zone</h3>
-                    <span style={{ fontSize: "0.68rem", background: "rgba(220,38,38,0.15)", color: "#dc2626", padding: "0.15rem 0.5rem", borderRadius: "999px", fontWeight: "800" }}>
-                      PERMANENT
+                    <span style={{ fontSize: "0.64rem", background: "rgba(220,38,38,0.12)", color: "#dc2626", padding: "0.18rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
+                      [ PERMANENT ]
                     </span>
                   </div>
 
