@@ -1500,7 +1500,7 @@ export default function App() {
                               onChange={(e) => setCurrentTime(Number(e.target.value))}
                               style={{ accentColor: "#84cc16", cursor: "pointer" }}
                             />
-                            <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.7rem", color: "#9ca3af", fontFamily: "monospace" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.7rem", color: "#9ca3af", fontFamily: "var(--font-mono)" }}>
                               <span>{formatTime(currentTime)}</span>
                               <span>{activeLeadCall.duration}</span>
                             </div>
