@@ -2,8 +2,8 @@
 
 :root {
   color-scheme: light;
-  --font-display: 'Clash Display', 'Satoshi', sans-serif;
-  --font-sans: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   
   font-family: var(--font-sans);
@@ -44,8 +44,8 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
 html, body {
@@ -434,9 +434,21 @@ button, input, textarea, select {
   right: 0.75rem;
   background: none;
   border: none;
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
   color: var(--text-subtle);
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  transition: all 120ms ease;
+}
+
+.password-eye-btn:hover {
+  color: var(--text-dark);
+  background: rgba(15, 23, 42, 0.06);
 }
 
 /* BUTTONS - SHARP ARCHITECTURAL INDUSTRIAL CTA HIERARCHY */
@@ -1094,10 +1106,10 @@ input:checked + .toggle-slider:before {
 
 .landing-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 4vw, 2rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
   color: #090d16;
 }
 

@@ -617,7 +617,7 @@ export default function App() {
                 className={`custom-dropdown-trigger ${industryDropdownOpen ? "open" : ""}`}
                 onClick={() => setIndustryDropdownOpen(!industryDropdownOpen)}
               >
-                <span>{currentPreset.icon} {currentPreset.name.split(" ")[0]}</span>
+                <span>{currentPreset.name.split(" ")[0]}</span>
                 <span className="custom-dropdown-arrow">▼</span>
               </button>
 
@@ -637,7 +637,7 @@ export default function App() {
                         }
                       }}
                     >
-                      <span>{p.icon} {p.name}</span>
+                      <span>{p.name}</span>
                       {selectedIndustry === p.id && <span>✓</span>}
                     </button>
                   ))}
@@ -783,7 +783,7 @@ export default function App() {
                   className="btn-hero-primary"
                   onClick={handleSendProfileOTP}
                 >
-                  ⚡ Send Verification OTP
+                  Send Verification OTP
                 </button>
               </div>
             ) : (
@@ -826,7 +826,7 @@ export default function App() {
                   className="btn-hero-primary"
                   onClick={handleVerifyProfileOTP}
                 >
-                  ✓ Verify &amp; Save Profile Details
+                  Verify &amp; Save Details
                 </button>
               </div>
             )}
@@ -878,7 +878,7 @@ export default function App() {
                 className="btn-delete-account"
                 onClick={handleConfirmDeleteAccount}
               >
-                🚨 Permanently Delete Account
+                Permanently Delete Account
               </button>
               <button
                 type="button"
@@ -974,7 +974,7 @@ export default function App() {
                       className="password-eye-btn"
                       onClick={() => setShowPassword(!showPassword)}
                     >
-                      {showPassword ? "👁️" : "🙈"}
+                      {showPassword ? "Hide" : "Show"}
                     </button>
                   </div>
                 </div>
@@ -984,7 +984,7 @@ export default function App() {
                   className="btn-hero-primary"
                   style={{ marginTop: "0.3rem" }}
                 >
-                  🔓 Log In to Mobile CRM
+                  Log In to Mobile CRM
                 </button>
 
                 <div style={{ background: "#f8fafc", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "4px", padding: "0.75rem", textAlign: "center", fontSize: "0.72rem", color: "#475569", lineHeight: "1.45", marginTop: "0.2rem" }}>
@@ -1003,7 +1003,7 @@ export default function App() {
                   onClick={() => completeLogin("CMP-84920")}
                   style={{ fontSize: "0.78rem", padding: "0.6rem" }}
                 >
-                  ⚡ Quick Demo Login (CMP-84920)
+                  Quick Demo Login (CMP-84920)
                 </button>
               </form>
             </div>
@@ -1034,14 +1034,14 @@ export default function App() {
                     className="btn-hero-primary"
                     onClick={() => setCurrentView("pipeline")}
                   >
-                    ⚡ View Lead Pipeline
+                    View Lead Pipeline
                   </button>
                   <button
                     type="button"
                     className="btn-hero-secondary"
                     onClick={handleTriggerSync}
                   >
-                    📲 Sync Mobile Call Audio
+                    Sync Mobile Call Audio
                   </button>
                 </div>
 
@@ -1074,19 +1074,19 @@ export default function App() {
             {currentView === "profile" && (
               <main style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>👤 Company Profile</h2>
+                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>Company Profile</h2>
                   <button
                     type="button"
                     className="btn-back-link"
                     onClick={() => setCurrentView("landing")}
                   >
-                    ‹ Back Home
+                    Back Home
                   </button>
                 </div>
 
                 {profileSavedToast && (
                   <div style={{ background: "#090d16", color: "#10b981", border: "1px solid rgba(16,185,129,0.3)", padding: "0.55rem 1rem", borderRadius: "4px", fontFamily: "var(--font-mono)", fontWeight: "700", fontSize: "0.75rem", boxShadow: "0 4px 14px rgba(0,0,0,0.2)" }}>
-                    ✓ PROFILE_DETAILS_VERIFIED_OK
+                    PROFILE_DETAILS_VERIFIED_OK
                   </div>
                 )}
 
@@ -1110,7 +1110,7 @@ export default function App() {
                         className="btn-black-pill"
                         onClick={() => setIsEditingProfile(true)}
                       >
-                        ✏️ Edit Details
+                        Edit Details
                       </button>
                     )}
                   </div>
@@ -1120,7 +1120,7 @@ export default function App() {
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
                       <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
                         <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
-                          🏢 Business / Company Name
+                          Business / Company Name
                         </span>
                         <div style={{ fontSize: "0.9rem", fontWeight: "800", color: "#090d16", marginTop: "0.1rem" }}>
                           {userProfile.companyName}
@@ -1129,7 +1129,7 @@ export default function App() {
 
                       <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
                         <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
-                          📱 Registered Phone Number
+                          Registered Phone Number
                         </span>
                         <div style={{ fontSize: "0.9rem", fontWeight: "700", color: "#090d16", marginTop: "0.1rem", fontFamily: "var(--font-mono)" }}>
                           {userProfile.phone}
@@ -1138,7 +1138,7 @@ export default function App() {
 
                       <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
                         <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
-                          📧 Company Email Address
+                          Company Email Address
                         </span>
                         <div style={{ fontSize: "0.9rem", fontWeight: "700", color: "#090d16", marginTop: "0.1rem", fontFamily: "var(--font-mono)" }}>
                           {userProfile.email}
@@ -1147,7 +1147,7 @@ export default function App() {
 
                       <div style={{ padding: "0.6rem 0.8rem", background: "#ffffff", border: "1px solid var(--surface-border-strong)", borderRadius: "4px" }}>
                         <span style={{ fontSize: "0.65rem", fontWeight: "700", color: "var(--text-subtle)", textTransform: "uppercase", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}>
-                          📍 Business Address
+                          Business Address
                         </span>
                         <div style={{ fontSize: "0.82rem", fontWeight: "600", color: "#090d16", marginTop: "0.1rem" }}>
                           {userProfile.address || "Standard Industrial Zone"}
@@ -1165,7 +1165,7 @@ export default function App() {
                         style={{ marginTop: "0.3rem" }}
                         onClick={() => setIsEditingProfile(true)}
                       >
-                        ✏️ Edit Company Details
+                        Edit Company Details
                       </button>
 
                       <button
@@ -1174,7 +1174,7 @@ export default function App() {
                         style={{ color: "#dc2626", borderColor: "#fca5a5", justifyContent: "center" }}
                         onClick={handleLogout}
                       >
-                        🔒 Log Out of App
+                        Log Out of App
                       </button>
                     </div>
                   ) : (
@@ -1229,7 +1229,7 @@ export default function App() {
                           className="btn-hero-primary"
                           style={{ flex: "1 1 auto", minHeight: "36px", padding: "0.5rem 0.75rem", fontSize: "0.76rem" }}
                         >
-                          💾 Save Changes (OTP)
+                          Save Changes (OTP)
                         </button>
 
                         <button
@@ -1284,7 +1284,7 @@ export default function App() {
                           className="pipeline-tab-pill"
                           onClick={() => setUniversalSearchQuery(term)}
                         >
-                          🔍 {term}
+                          {term}
                         </button>
                       ))}
                     </div>
@@ -1328,7 +1328,7 @@ export default function App() {
                         <span>🏷️ {res.snippet}</span>
                       </div>
                       <div style={{ textAlign: "right", fontSize: "0.72rem", color: "var(--brand-olive)", fontWeight: "800" }}>
-                        {res.type === "setting" ? "Open Setting Option ⚙️ →" : "View Full Details →"}
+                        {res.type === "setting" ? "Open Setting Option →" : "View Full Details →"}
                       </div>
                     </div>
                   ))}
@@ -1352,7 +1352,7 @@ export default function App() {
                 {leadsSubView === "contacts" && (
                   <div className="panel-box">
                     <div className="panel-header">
-                      <h3>🗂️ Contacts ({filteredLeads.length})</h3>
+                      <h3>Contacts ({filteredLeads.length})</h3>
                       <input
                         type="text"
                         placeholder="Search contact..."
@@ -1396,7 +1396,7 @@ export default function App() {
                         className="btn-back-link"
                         onClick={() => setLeadsSubView("contacts")}
                       >
-                        ‹ Contacts
+                        Contacts
                       </button>
                       <div>
                         <h3 style={{ fontSize: "1rem", fontWeight: "800" }}>{activeContact.name}</h3>
@@ -1408,7 +1408,7 @@ export default function App() {
 
                     <div className="panel-box">
                       <div className="panel-header">
-                        <h3>📞 Call Leads &amp; Audio Sessions</h3>
+                        <h3>Call Leads &amp; Audio Sessions</h3>
                         <span className="ind-pill ind-manufacturing">
                           {getCallsForContact(activeContact).length} Calls
                         </span>
@@ -1450,7 +1450,7 @@ export default function App() {
                         className="btn-back-link"
                         onClick={() => setLeadsSubView("contact_leads")}
                       >
-                        ‹ All Leads
+                        All Leads
                       </button>
                       <div style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         <h3 style={{ fontSize: "0.95rem", fontWeight: "800" }}>{activeLeadCall.title}</h3>
@@ -1533,7 +1533,7 @@ export default function App() {
                               className="btn-black-pill btn-sms-pill"
                               style={{ width: "100%", justifyContent: "center", padding: "0.65rem" }}
                             >
-                              💬 Send SMS to Contact
+                              Send SMS to Contact
                             </a>
                           </div>
                         </div>
@@ -1548,7 +1548,7 @@ export default function App() {
             {currentView === "pipeline" && (
               <main style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>🗂️ Lead Pipeline</h2>
+                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>Lead Pipeline</h2>
                   <span style={{ fontSize: "0.68rem", background: "rgba(2,132,199,0.1)", color: "#0284c7", padding: "0.2rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
                     [ {pipelineLeads.length}_LEADS ]
                   </span>
@@ -1589,10 +1589,10 @@ export default function App() {
                           value={lead.status}
                           onChange={(e) => handleUpdateStatus(lead.id, e.target.value)}
                         >
-                          <option value="New">🆕 New</option>
-                          <option value="Warm">☀️ Warm</option>
-                          <option value="Proposal">📄 Proposal</option>
-                          <option value="Closed">✅ Closed</option>
+                          <option value="New">New</option>
+                          <option value="Warm">Warm</option>
+                          <option value="Proposal">Proposal</option>
+                          <option value="Closed">Closed</option>
                         </select>
                       </div>
 
@@ -1607,14 +1607,14 @@ export default function App() {
 
                         <div style={{ display: "flex", gap: "0.35rem" }}>
                           <a href={`sms:${lead.phone}`} className="btn-mini-action btn-mini-sms">
-                            💬 SMS
+                            SMS
                           </a>
                           <button
                             type="button"
                             className="btn-mini-action btn-mini-note"
                             onClick={() => setSummaryModalLead(lead)}
                           >
-                            📝 AI Note
+                            AI Note
                           </button>
                         </div>
                       </div>
@@ -1628,7 +1628,7 @@ export default function App() {
             {currentView === "dashboard" && (
               <main style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>📊 Analytics &amp; Metrics</h2>
+                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>Analytics &amp; Metrics</h2>
                   <span style={{ fontSize: "0.68rem", background: "rgba(16,185,129,0.12)", color: "#059669", padding: "0.2rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
                     [ SYS // LIVE_ENGINE ]
                   </span>
@@ -1636,33 +1636,33 @@ export default function App() {
 
                 <div className="analytics-grid-2col">
                   <div className="stat-card-widget">
-                    <span className="stat-widget-label">🎙️ Calls Synced</span>
+                    <span className="stat-widget-label">Calls Synced</span>
                     <div className="stat-widget-number">42</div>
                     <span className="stat-widget-trend">↗ +14% this week</span>
                   </div>
 
                   <div className="stat-card-widget">
-                    <span className="stat-widget-label">⚡ AI Summaries</span>
+                    <span className="stat-widget-label">AI Summaries</span>
                     <div className="stat-widget-number">128</div>
                     <span className="stat-widget-trend">100% Automated</span>
                   </div>
 
                   <div className="stat-card-widget">
-                    <span className="stat-widget-label">🗂️ Active Leads</span>
+                    <span className="stat-widget-label">Active Leads</span>
                     <div className="stat-widget-number">{leads.length}</div>
-                    <span className="stat-widget-trend">🎯 68% Qualified</span>
+                    <span className="stat-widget-trend">68% Qualified</span>
                   </div>
 
                   <div className="stat-card-widget">
-                    <span className="stat-widget-label">⏱️ Avg Processing</span>
+                    <span className="stat-widget-label">Avg Processing</span>
                     <div className="stat-widget-number">0.4s</div>
-                    <span className="stat-widget-trend">⚡ Smart AI Engine</span>
+                    <span className="stat-widget-trend">Smart AI Engine</span>
                   </div>
                 </div>
 
                 <div className="panel-box">
                   <div className="panel-header">
-                    <h3>🔥 Call Intent &amp; Urgency Breakdown</h3>
+                    <h3>Call Intent &amp; Urgency Breakdown</h3>
                     <span style={{ fontSize: "0.72rem", fontWeight: "800", color: "var(--brand-olive)" }}>100% Synced</span>
                   </div>
 
@@ -1685,13 +1685,13 @@ export default function App() {
             {currentView === "settings" && (
               <main style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>⚙️ App Settings</h2>
+                  <h2 style={{ fontSize: "1.2rem", fontWeight: "800" }}>App Settings</h2>
                   <button
                     type="button"
                     className="btn-black-pill"
                     onClick={handleSaveSettings}
                   >
-                    💾 Save
+                    Save
                   </button>
                 </div>
 
@@ -1699,13 +1699,13 @@ export default function App() {
                 {userProfile && (
                   <div className="panel-box" style={{ background: "#111111", color: "#ffffff" }}>
                     <div className="panel-header" style={{ borderBottomColor: "rgba(255,255,255,0.1)" }}>
-                      <h3 style={{ color: "#ffffff" }}>🔒 Encrypted Company Session</h3>
+                      <h3 style={{ color: "#ffffff" }}>Encrypted Company Session</h3>
                       <button
                         type="button"
                         onClick={handleLogout}
                         style={{ background: "rgba(239,68,68,0.15)", color: "#ef4444", border: "1px solid rgba(239,68,68,0.3)", borderRadius: "3px", padding: "0.25rem 0.6rem", fontSize: "0.68rem", fontFamily: "var(--font-mono)", fontWeight: "700", cursor: "pointer" }}
                       >
-                        🔒 LOG_OUT
+                        LOG OUT
                       </button>
                     </div>
 
@@ -1887,7 +1887,7 @@ export default function App() {
                 {/* Section 5: Data Export */}
                 <div className="panel-box">
                   <div className="panel-header">
-                    <h3>💾 Data Backup &amp; Export</h3>
+                    <h3>Data Backup &amp; Export</h3>
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
@@ -1897,7 +1897,7 @@ export default function App() {
                       onClick={handleExportCSV}
                       style={{ justifyContent: "center", padding: "0.65rem", fontSize: "0.8rem" }}
                     >
-                      📥 Export All CRM Leads to CSV
+                      Export All CRM Leads to CSV
                     </button>
 
                     <button
@@ -1905,7 +1905,7 @@ export default function App() {
                       onClick={handleResetData}
                       style={{ background: "#f8fafc", color: "#090d16", border: "1px solid var(--surface-border-strong)", borderRadius: "4px", padding: "0.65rem", fontFamily: "var(--font-sans)", fontWeight: "600", fontSize: "0.8rem", cursor: "pointer" }}
                     >
-                      🔄 Reset CRM Sample Data
+                      Reset CRM Sample Data
                     </button>
                   </div>
                 </div>
@@ -1913,7 +1913,7 @@ export default function App() {
                 {/* Section 6: Danger Zone - Delete Account */}
                 <div className="danger-panel-box">
                   <div className="panel-header" style={{ borderBottomColor: "rgba(239,68,68,0.2)" }}>
-                    <h3 style={{ color: "#dc2626" }}>⚠️ Danger Zone</h3>
+                    <h3 style={{ color: "#dc2626" }}>Danger Zone</h3>
                     <span style={{ fontSize: "0.64rem", background: "rgba(220,38,38,0.12)", color: "#dc2626", padding: "0.18rem 0.5rem", borderRadius: "2px", fontFamily: "var(--font-mono)", fontWeight: "700" }}>
                       [ PERMANENT ]
                     </span>
@@ -1928,7 +1928,7 @@ export default function App() {
                     className="btn-delete-account"
                     onClick={() => setDeleteAccountModalOpen(true)}
                   >
-                    🚨 Delete Account &amp; Purge Data
+                    Delete Account &amp; Purge Data
                   </button>
                 </div>
               </main>
