@@ -12,17 +12,18 @@
     <path d="M33 20.5h14.5v5.5H39v5.7h7.8v5.3H39V48h-6V20.5Z" fill="#ffffff" opacity="0.96" />
   </svg>
 
-  # CRM_APP: AI Call CRM Mobile Platform
+  # CRM_APP: Android AI Call CRM Platform
 
-  **A modern, high-performance mobile AI CRM platform that auto-syncs phone call recordings, generates AI summaries (GPT-4o / Ollama), and manages lead pipelines with 1-tap SMS.**
+  **A modern, high-performance Android mobile AI CRM platform that auto-syncs phone call recordings, generates instant AI summaries (GPT-4o / Ollama), and manages lead pipelines with 1-tap SMS. Built exclusively for Android.**
 
-  [Repository](https://github.com/bhaveshpatil-ks/CRM_APP) • [Features](#key-features) • [React Native / Mobile Architecture](#mobile--react-native-source-architecture) • [AI Pipeline](#multi-engine-ai-summarizer-pipeline) • [Website Portal](https://github.com/bhaveshpatil-ks/CRM-Website)
+  [Repository](https://github.com/bhaveshpatil-ks/CRM_APP) • [Features](#key-features) • [Android Architecture](#mobile--android-native-architecture) • [AI Pipeline](#multi-engine-ai-summarizer-pipeline) • [Website Portal](https://github.com/bhaveshpatil-ks/CRM-Website)
 
   <br />
 
+  [![Platform](https://img.shields.io/badge/PLATFORM-ANDROID_ONLY-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://android.com/)
   [![React](https://img.shields.io/badge/REACT_18-090D16?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
   [![Vite](https://img.shields.io/badge/VITE_5-090D16?style=for-the-badge&logo=vite&logoColor=646CFF)](https://vitejs.dev/)
-  [![React Native Compatible](https://img.shields.io/badge/REACT_NATIVE_BRIDGE-090D16?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+  [![Android Bridge](https://img.shields.io/badge/ANDROID_NATIVE_BRIDGE-090D16?style=for-the-badge&logo=android&logoColor=3DDC84)](https://android.com/)
   [![Node.js](https://img.shields.io/badge/NODE.JS_EXPRESS-090D16?style=for-the-badge&logo=nodedotjs&logoColor=339933)](https://nodejs.org/)
   [![License: MIT](https://img.shields.io/badge/LICENSE-MIT-10b981?style=for-the-badge)](LICENSE)
 
@@ -64,13 +65,13 @@ CRM_APP is engineered to provide instant intelligent call summaries across every
 
 ---
 
-## ⚡ Mobile & React Native Source Architecture
+## ⚡ Mobile & Android Native Architecture
 
-CRM_APP is architected with a mobile-first design system (`375px × 720px` responsive phone shell) ready for standalone deployment or wrapping via **React Native** (using `react-native-webview` or native bridging).
+CRM_APP is architected with a mobile-first design system (`375px × 720px` responsive phone shell) ready for standalone deployment or wrapping via **Android Native / React Native** (using `react-native-webview` or native bridging).
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│                   NATIVE ANDROID / IOS OS                   │
+│                      NATIVE ANDROID OS                      │
 ├──────────────────────────────┬──────────────────────────────┤
 │ TelephonyManager & Call State│ FileObserver / MediaStore    │
 │ (ACTION_PHONE_STATE_CHANGED) │ (/Recordings/Call directory) │
@@ -100,8 +101,8 @@ CRM_APP is architected with a mobile-first design system (`375px × 720px` respo
 - **Short Call Filter**: Calls under 10 seconds in duration are classified as missed calls or wrong numbers and automatically filtered out to keep the CRM clean.
 - **Audio Extraction**: The raw audio file is indexed with metadata (timestamp, phone number, duration) and bridged to the CRM ingestion pipeline.
 
-### 2. React Native Integration Bridge
-To bundle CRM_APP into an iOS/Android `.apk` or `.ipa`:
+### 2. Android Native Integration Bridge
+To bundle CRM_APP into an Android `.apk`:
 ```javascript
 // Native Android HeadlessJsTaskService / WebView Bridge Example
 import { WebView } from 'react-native-webview';
@@ -179,7 +180,7 @@ Multi-target indexing allowing reps to search across:
 ### 4. Enterprise Security & Biometrics
 - **Profile Lock**: Read-only profile view with an explicit `Edit Details` toggle.
 - **Two-Factor OTP Security**: Edits require 4-digit verification code (`1234`) dispatched via SMS or Company Email.
-- **Face ID / Biometric Lock**: In-app toggle for biometric verification on boot.
+- **Android Biometric / Fingerprint Lock**: In-app toggle for biometric verification on boot.
 - **Permanent Account Purge**: Instant wipe of local credentials, session tokens, and cached lead records.
 
 ---
