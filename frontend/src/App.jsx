@@ -10,7 +10,7 @@ const SETTINGS_SEARCH_ITEMS = [
     title: "Mobile Call Recording & Auto-Sync",
     subtitle: "Auto-sync calls on hang-up, filter short calls (<10s), device folder path",
     keywords: ["recording", "storage", "path", "folder", "sync", "hang-up", "hangup", "filter", "short calls", "device", "mobile"],
-    snippet: "Configure Android/iOS call recording storage directory and auto-sync behavior"
+    snippet: "Configure Android call recording storage directory and auto-sync behavior"
   },
   {
     id: "set-2",
@@ -36,9 +36,9 @@ const SETTINGS_SEARCH_ITEMS = [
   {
     id: "set-5",
     title: "Security & Biometric Lock",
-    subtitle: "Brute-force protection, encrypted tokens & Biometric Face ID",
-    keywords: ["security", "auth", "lock", "biometric", "face id", "fingerprint"],
-    snippet: "Configure enterprise-grade encrypted tokens and Face ID lock"
+    subtitle: "Brute-force protection, encrypted tokens & Android Biometric Lock",
+    keywords: ["security", "auth", "lock", "biometric", "fingerprint", "device lock"],
+    snippet: "Configure enterprise-grade encrypted tokens and Android Biometric lock"
   },
   {
     id: "set-6",
@@ -1778,7 +1778,7 @@ export default function App() {
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                     <div className="setting-row-toggle">
                       <div className="setting-label-group">
-                        <span className="setting-title">Biometric Face ID / Fingerprint Lock</span>
+                        <span className="setting-title">Android Biometric / Fingerprint Lock</span>
                         <span className="setting-desc">Require device biometric verification to open CRM</span>
                       </div>
                       <label className="toggle-switch">
